@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(25, 25, 25);
+}
+
+.navbar{
+    background-color: transparent;
+}
+
+.navbar-brand,.main-txt {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Courier New',monospace;
+    color: rgb(230, 230, 230);
+}
+
+.main-txt{
+    font-size: 40px;
+}
+
+a.nav-link,.para-txt{
+    color: rgb(150, 150, 150);
+    font-size: 17px;
+    font-family: Monaco,monospace;
+}
+.para-txt{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular';
+    text-align: justify;
+}
