@@ -1,0 +1,78 @@
+body {
+    background-color: rgb(25, 25, 25);
+}
+
+.navbar {
+    background-color: transparent;
+}
+
+
+.navbar-brand,
+.main-txt {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    color: rgb(230, 230, 230);
+}
+
+.navbar-brand {
+    background-image: linear-gradient(-225deg,
+            rgb(150, 150, 150) 0%,
+            rgb(150, 150, 150) 50%,
+            #ffffff 60%,
+            rgb(3, 3, 3) 100%);
+    background-size: 210% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 3s linear infinite;
+    animation-direction:alternate;
+    transition: 2s;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+    animation-fill-mode: forwards;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 100% center;
+    }
+}
+
+button.navbar-toggler{
+    background-color: rgb(70, 70, 70);
+}
+
+.navbar-toggler:focus{
+    box-shadow: 0 0 0 0.25rem #636363;
+}
+
+.main-txt {
+    font-size: 40px;
+    text-align: justify;
+}
+
+a.nav-link,
+.para-txt {
+    color: rgb(150, 150, 150);
+    font-size: 17px;
+    font-family: Monaco, monospace;
+}
+
+a.nav-link:hover,a.nav-link:focus{
+    color: rgb(110, 110, 110);
+}
+
+.para-txt {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular';
+    text-align: justify;
+}
+
+img{
+    width: 100vw;
+    height: 50vh;
+}
