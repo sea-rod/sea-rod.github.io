@@ -1,5 +1,7 @@
 :root {
     --atc-color: rgb(5, 188, 255);
+    --atc-color-dark:rgb(16, 137, 182);
+    --neon :rgba(5, 188, 255, 0.224);
 }
 body {
     background-color: rgb(25, 25, 25);
@@ -87,4 +89,18 @@ img{
 .btn-atc{
     border:2px solid var(--atc-color);
     color: var(--atc-color);
+    transition: 0.9s;
+}
+
+.btn-atc:hover {
+    /* border: 2px solid var(--atc-color-dark); */
+    /* background-color: var(--atc-color-dark); */
+    border: 2px solid;
+    color: var(--atc-color-dark);
+    border-color: var(--atc-color-dark);
+    box-shadow: var(--neon) 0px -5px 50px 2px,
+            var(--neon) 5px 0px 50px 2px,
+            var(--neon) 0px 5px 50px 2px,
+            var(--neon) -5px 0px 50px 2px;
+    
 }
