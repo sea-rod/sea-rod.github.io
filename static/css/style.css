@@ -3,6 +3,11 @@
     --atc-color-dark:rgb(16, 137, 182);
     --neon :rgba(5, 188, 255, 0.224);
 }
+
+html,body{
+    height: 100%;
+}
+
 body {
     background-color: rgb(25, 25, 25);
 }
@@ -88,7 +93,6 @@ img{
     filter: grayscale();
 }
 
-
 .btn-atc{
     border:2px solid var(--atc-color);
     color: var(--atc-color);
@@ -115,8 +119,29 @@ img{
     background-color: #262626;
     height: 100vh;
 }
+.row{
+    position: relative;
+    height: 100%;
+}
 .about img{
     object-fit: cover;
     aspect-ratio: 1;
     height: 100%;
+}
+
+.shadow-box-blue{
+    box-shadow: var(--atc-color) 0px 0px 30px 5px; 
+    /* var(--atc-color) 0px 16px 56px,  */
+    /* var(--atc-color) 0px 24px 80px;    */
+}
+
+
+@media only screen and (max-width: 768px) {
+    .about{
+        height: auto;
+    }
+
+    #hero img {
+        display: none;
+    }
 }
