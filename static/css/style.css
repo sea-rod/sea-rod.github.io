@@ -29,7 +29,6 @@ body {
     background-size: 210% auto;
     color: #fff;
     background-clip: text;
-    text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: textclip 3s linear infinite;
@@ -57,6 +56,10 @@ button.navbar-toggler{
     box-shadow: 0 0 0 0.25rem #636363;
 }
 
+
+#hero {
+    height: 90vh;
+}
 .main-txt {
     font-size: 6vmin;
     text-align: left;
@@ -103,4 +106,17 @@ img{
             var(--neon) 0px 5px 50px 2px,
             var(--neon) -5px 0px 50px 2px;
     
+}
+.highlight{
+    color: var(--atc-color);
+}
+
+.about{
+    background-color: #262626;
+    height: 100vh;
+}
+.about img{
+    object-fit: cover;
+    aspect-ratio: 1;
+    height: 100%;
 }
