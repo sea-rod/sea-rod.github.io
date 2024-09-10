@@ -65,10 +65,14 @@ button.navbar-toggler{
 #hero {
     height: 90vh;
 }
-.main-txt {
-    font-size: 6vmin;
-    text-align: left;
 
+#hero .main-txt,#hero .para-txt{
+    font-weight: bold;
+}
+
+.main-txt {
+    font-size: 8vmin;
+    text-align: left;
 }
 
 a.nav-link,
@@ -143,5 +147,8 @@ img{
 
     #hero img {
         display: none;
+    }
+    .main-txt{
+        font-size:15vmin;
     }
 }
