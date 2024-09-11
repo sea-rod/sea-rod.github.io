@@ -120,8 +120,8 @@ img{
 }
 
 .about{
+    min-height: 100vh;
     background-color: #262626;
-    height: 100vh;
 }
 .row{
     position: relative;
@@ -139,6 +139,47 @@ img{
     /* var(--atc-color) 0px 24px 80px;    */
 }
 
+.skill-card {
+    border-radius: 20px;
+    background-color: #262626;
+    width: 23%;
+}
+
+.skill-card:hover{
+    box-shadow: var(--atc-color) 0px 0px 30px 5px;
+    scale: 1.04;
+    z-index: 3;
+
+}
+
+.card-text {
+    color: #636363;
+    text-align: justify;
+}
+
+.hidden {
+    opacity: 0;
+    transition: 0.5s;
+    filter: blur(30);
+    transform: translate(-100%);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0);
+}
+
+.row .hidden:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+.row .hidden:nth-child(3) {
+    transition-delay: 300ms;
+}
+.row .hidden:nth-child(4) {
+    transition-delay: 400ms;
+}
 
 @media only screen and (max-width: 768px) {
     .about{
@@ -150,5 +191,9 @@ img{
     }
     .main-txt{
         font-size:15vmin;
+    }
+    .skill-card{
+        width: 100%;
+        margin-top: 10px;
     }
 }
