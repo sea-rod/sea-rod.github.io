@@ -1,35 +1,40 @@
-var h1 = document.getElementsByClassName("animin");
-var msg = [];
+// Initialize AOS
+      AOS.init({ duration: 1000, once: true });
 
-for (let i = 0; i < h1.length; i++) {
-  msg.push(h1[i].innerHTML);
-  h1[i].innerHTML = "";
-}
+      // Toggle Mobile Menu
+      function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+      }
 
+      // Intersection Observer for Animations
+      const animateElements = document.querySelectorAll('.animate-on-scroll');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target); // Stop observing once visible
+            }
+          });
+        },
+        {
+          rootMargin: '0px 0px -100px 0px', // Trigger 100px before element is fully in view
+          threshold: 0.1 // Trigger when 10% of the element is visible
+        }
+      );
+      animateElements.forEach((el) => observer.observe(el));
 
-console.log(msg);
-
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-document.getElementsByTagName("body")[0].onload = async function animin_fun() {
-  for (let j = 0; j < msg.length; j++) {
-    for (let i = 0; i < msg[j].length; i++) {
-      h1[j].innerHTML += msg[j][i];
-      await sleep(100);
-    }
-  }
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) entry.target.classList.add("show");
-    else entry.target.classList.remove("show");
-  });
-});
-
-const hidden_elements = document.querySelectorAll(".hidden");
-hidden_elements.forEach((element) => {
-  observer.observe(element);
-});
+      // Typewriter Effect for Hero Text
+      const heroText = document.querySelector('#hero h1');
+      const text = heroText.textContent;
+      heroText.textContent = '';
+      let i = 0;
+      function typeWriter() {
+        if (i < text.length) {
+          heroText.textContent += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, 100);
+        }
+      }
+      setTimeout(typeWriter, 500);
