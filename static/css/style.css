@@ -73,7 +73,7 @@
         }
       }
       .btn-atc {
-        border: 2px solid var(--atc-color);
+        border: 1px solid var(--atc-color);
         color: var(--atc-color);
         transition: 0.9s;
       }
