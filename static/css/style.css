@@ -54,7 +54,7 @@
           rgb(3, 3, 3) 100%
         );
         background-size: 210% auto;
-        color: #fff;
+        color: #fff; 
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
