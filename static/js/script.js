@@ -1,4 +1,4 @@
-// Initialize AOS
+      // Initialize AOS
       AOS.init({ duration: 1000, once: true });
 
       // Toggle Mobile Menu
@@ -38,3 +38,22 @@
         }
       }
       setTimeout(typeWriter, 500);
+
+      // 3D Tilt Effect for Profile Image
+      const profileContainer = document.querySelector('.profile-3d-container');
+      const profileCard = document.querySelector('.profile-3d-card');
+
+      if (profileContainer && profileCard) {
+        document.addEventListener('mousemove', (e) => {
+          const { clientX, clientY } = e;
+          const { left, top, width, height } = profileContainer.getBoundingClientRect();
+
+          const centerX = left + width / 2;
+          const centerY = top + height / 2;
+
+          const rotateX = (centerY - clientY) / 20; // Adjust sensitivity
+          const rotateY = (clientX - centerX) / 20; // Adjust sensitivity
+
+          profileCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+      }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<tmlhtml lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +12,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./static/css/style.css">
   </head>
+
   <body class="text-gray-200">
+    <!-- Atmospheric Background Glows -->
+    <div class="fixed top-0 -left-20 w-96 h-96 bg-indigo-900/20 blur-3xl rounded-full -z-10"></div>
+    <div class="fixed bottom-0 -right-20 w-96 h-96 bg-cyan-900/20 blur-3xl rounded-full -z-10"></div>
+
     <!-- Navbar -->
     <nav class="fixed top-0 w-full bg-black bg-opacity-80 backdrop-blur-md z-50">
       <div class="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -20,8 +26,10 @@
           <a href="#hero" class="nav-link text-lg my-auto">Home</a>
           <a href="#projects" class="nav-link text-lg my-auto">Projects</a>
           <a href="#expertise" class="nav-link text-lg my-auto">Expertise</a>
+          <a href="#publications" class="block py-2 nav-link">Publications</a>
           <a href="#about" class="nav-link text-lg my-auto">About</a>
-          <a href="#contact" class="nav-link text-lg bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-2 rounded-full neon-glow">Contact</a>
+          <a href="#contact"
+            class="nav-link text-lg bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-2 rounded-full neon-glow">Contact</a>
         </div>
         <button class="md:hidden text-white" onclick="toggleMenu()">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -34,8 +42,10 @@
         <a href="#hero" class="block py-2 nav-link">Home</a>
         <a href="#projects" class="block py-2 nav-link">Projects</a>
         <a href="#expertise" class="block py-2 nav-link">Expertise</a>
+        <a href="#publications" class="block py-2 nav-link">Publications</a>
         <a href="#about" class="block py-2 nav-link">About</a>
-        <a href="#contact" class="block py-2 nav-link bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-2 rounded-full neon-glow text-center">Contact</a>
+        <a href="#contact"
+          class="block py-2 nav-link bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-2 rounded-full neon-glow text-center">Contact</a>
       </div>
     </nav>
 
@@ -50,31 +60,53 @@
           <a href="#contact" class="btn-atc inline-block text-white px-6 py-3 rounded-full">Get in Touch</a>
         </div>
         <div class="md:w-1/2 mt-8 md:mt-0" data-aos="zoom-in">
-          <img src="./static/img/favicon.png" alt="Profile" class="w-full max-w-md mx-auto rounded-full neon-glow" />
+          <div class="relative profile-3d-container">
+            <div class="absolute inset-0 bg-cyan-500/20 blur-3xl rounded-full"></div>
+
+            <!-- Holographic AI Rings -->
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div class="ai-ring ai-ring-1"></div>
+              <div class="ai-ring ai-ring-2"></div>
+              <div class="neon-pulse-ring"></div>
+            </div>
+
+            <div class="profile-3d-card">
+              <img src="./static/img/favicon.png" alt="Profile"
+                class="relative w-full max-w-md mx-auto rounded-full neon-glow" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-gray-900">
+    <section id="projects" class="py-16">
       <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-bold text-center text-white mb-12" data-aos="fade-up">Key Projects</h2>
+        <h2 class="text-4xl font-bold text-center text-white mb-4" data-aos="fade-up">Key Projects</h2>
+        <p class="text-center text-gray-400 italic mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+          A curated selection of engineering feats where AI meets intuitive design.
+        </p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div class="skill-card bg-gray-800 p-6 rounded-lg animate-on-scroll">
             <h3 class="text-2xl font-semibold text-cyan-400 mb-4">Jobify</h3>
-            <p class="card-text">RAG-powered app for ATS-friendly resume optimization and job search. Built with FastAPI, Transformers, and React.</p>
+            <p class="card-text">RAG-powered app for ATS-friendly resume optimization and job search. Built with
+              FastAPI, Transformers, and React.</p>
           </div>
           <div class="skill-card bg-gray-800 p-6 rounded-lg animate-on-scroll">
-            <h3 class="text-2xl font-semibold text-cyan-400 mb-4">RL Movie Recommender System</h3>
-            <p class="card-text">Reinforcement learning-based movie recommender using Deep Q-Networks (DQN). Developed with TensorFlow and Python.</p>
-          </div>
-          <div class="skill-card bg-gray-800 p-6 rounded-lg animate-on-scroll">
-            <h3 class="text-2xl font-semibold text-cyan-400 mb-4">Machine Translation System</h3>
-            <p class="card-text">Transformer-based model for Konkani to Sanskrit translation, achieving high accuracy. Built with PyTorch and Gradio.</p>
+            <h3 class="text-2xl font-semibold text-cyan-400 mb-4">Atelier</h3>
+            <p class="card-text">A sophisticated planning ecosystem featuring a chat-based interface for seamless
+              scheduling. Integrates directly with Google Calendar, offering intelligent daily planning and academic
+              roadmaps based on exam dates.</p>
           </div>
           <div class="skill-card bg-gray-800 p-6 rounded-lg animate-on-scroll">
             <h3 class="text-2xl font-semibold text-cyan-400 mb-4">RAG Quiz App</h3>
-            <p class="card-text">Dynamic quiz app using Retrieval-Augmented Generation, developed with Django and React.</p>
+            <p class="card-text">Dynamic quiz app using Retrieval-Augmented Generation, developed with Django and React.
+            </p>
+          </div>
+          <div class="skill-card bg-gray-800 p-6 rounded-lg animate-on-scroll">
+            <h3 class="text-2xl font-semibold text-cyan-400 mb-4">Machine Translation System</h3>
+            <p class="card-text">Transformer-based model for Konkani to Sanskrit translation, achieving high accuracy.
+              Built with PyTorch and Gradio.</p>
           </div>
         </div>
       </div>
@@ -98,7 +130,8 @@
               <span class="tag">Decoder Models</span>
             </p>
             <p class="card-text mt-auto">
-              Designing intelligent systems using machine learning algorithms. I develop predictive models, automate tasks, and provide data-driven insights for smarter decision-making.
+              Designing intelligent systems using machine learning algorithms. I develop predictive models, automate
+              tasks, and provide data-driven insights for smarter decision-making.
             </p>
           </div>
           <div class="lg:w-3/12 skill-card px-4 py-4 flex flex-col animate-on-scroll">
@@ -114,7 +147,8 @@
               <span class="tag">Celery</span>
             </p>
             <p class="card-text mt-auto">
-              Building secure and scalable backend systems. I focus on creating efficient APIs and handling complex logic for web applications, ensuring smooth integration with front-end services.
+              Building secure and scalable backend systems. I focus on creating efficient APIs and handling complex
+              logic for web applications, ensuring smooth integration with front-end services.
             </p>
           </div>
           <div class="lg:w-3/12 skill-card px-4 py-4 flex flex-col animate-on-scroll">
@@ -129,7 +163,8 @@
               <span class="tag">tail wind</span>
             </p>
             <p class="card-text mt-auto">
-              Developing interactive, responsive user interfaces. I leverage React for fast, modular UIs, while ensuring usability and aesthetics with HTML, CSS, and JavaScript.
+              Developing interactive, responsive user interfaces. I leverage React for fast, modular UIs, while ensuring
+              usability and aesthetics with HTML, CSS, and JavaScript.
             </p>
           </div>
           <div class="lg:w-3/12 skill-card px-4 py-4 flex flex-col animate-on-scroll">
@@ -143,15 +178,79 @@
               <span class="tag">Vercel</span>
             </p>
             <p class="card-text mt-auto">
-              Experienced with Docker for containerization, Linux for server management, and Git for version control, Vercel for hosting. Arduino for integrating software with hardware in embedded systems.
+              Experienced with Docker for containerization, Linux for server management, and Git for version control,
+              Vercel for hosting. Arduino for integrating software with hardware in embedded systems.
             </p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Publications Section -->
+    <section id="publications" class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center text-white mb-4" data-aos="fade-up">Publications</h2>
+        <p class="text-center text-gray-400 italic mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+          Academic research in Natural Language Processing and Zero-Shot Learning.
+        </p>
+        <div class="grid grid-cols-1 gap-8">
+          <div class="skill-card bg-gray-800 p-8 rounded-lg animate-on-scroll">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-6">
+              <div class="flex-1">
+                <h3 class="text-2xl font-semibold text-cyan-400 mb-4">Sentiment Analysis for Konkani using Zero-Shot
+                  Marathi Trained Neural Network Model</h3>
+                <p class="text-white font-medium mb-2">M. Ghosarwadkar, <span class="highlight">Seamus Fred
+                    Rodrigues</span>, P. Bhagat, A. Abranches, P.D. Korkankar, J. Pawar</p>
+                <p class="text-gray-400 text-sm mb-4">Proceedings of the 21st International Conference on Natural
+                  Language Processing (ICON), 2024</p>
+                <p class="card-text mb-6">
+                  An experiment utilizing a sentiment analysis model fine-tuned on Marathi to classify Konkani
+                  sentiments.
+                  The research demonstrates the effectiveness of Zero-shot learning across linguistically similar
+                  languages,
+                  providing a powerful tool for sentiment classification in resource-poor languages.
+                </p>
+                <a href="https://aclanthology.org/2024.icon-1.66/" target="_blank"
+                  class="btn-atc inline-block text-sm px-4 py-2 rounded-full">Read Paper</a>
+              </div>
+              <div
+                class="hidden md:block bg-cyan-900/20 p-4 rounded-lg border border-cyan-500/30 text-cyan-400 font-mono text-xs">
+                ICON 2024 <br>
+                Pages: 569--575 <br>
+                Venue: Chennai, India
+              </div>
+            </div>
+          </div>
+          <div class="skill-card bg-gray-800 p-8 rounded-lg animate-on-scroll">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-6">
+              <div class="flex-1">
+                <h3 class="text-2xl font-semibold text-cyan-400 mb-4">Comparing LLM Alignment Methods Under Constrained
+                  Conditions: A Study of DPO, ORPO, and KTO</h3>
+                <p class="text-white font-medium mb-2"><span class="highlight">Seamus Fred Rodrigues</span></p>
+                <p class="text-gray-400 text-sm mb-4">Master's Dissertation, 2025</p>
+                <p class="card-text mb-6">
+                  Investigates preference optimization methods (DPO, ORPO, KTO) under low-resource constraints.
+                  Introduced the Alignment Efficiency Ratio (AER) to evaluate preference gain per GPU-hour
+                  using Llama-3.2-1B and QLoRA. Found KTO to be the most stable and scalable method for low-data
+                  regimes.
+                </p>
+                <a href="#" target="_blank" class="btn-atc inline-block text-sm px-4 py-2 rounded-full">View
+                  Dissertation</a>
+              </div>
+              <div
+                class="hidden md:block bg-cyan-900/20 p-4 rounded-lg border border-cyan-500/30 text-cyan-400 font-mono text-xs">
+                Thesis 2025 <br>
+                Focus: LLM Alignment <br>
+                Method: QLoRA / AER
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- About Section -->
-    <section id="about" class="py-16 bg-gray-900">
+    <section id="about" class="py-16">
       <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 mb-8 md:mb-0" data-aos="zoom-in">
           <img src="./static/img/favicon.png" alt="About" class="w-full max-w-sm mx-auto rounded-full neon-glow" />
@@ -159,7 +258,13 @@
         <div class="md:w-1/2" data-aos="fade-left">
           <h2 class="text-4xl font-bold text-white mb-6">About Me</h2>
           <p class="text-lg text-gray-400">
-            I'm an <span class="highlight">AI and Machine Learning Specialist</span> passionate about building intelligent systems. My projects include a <span class="highlight">RAG-powered Joby app</span> for ATS-friendly resumes, a <span class="highlight">reinforcement learning-based movie recommender</span> using DQN, a <span class="highlight">machine translation system</span> from Konkani to Sanskrit, and a <span class="highlight">RAG quiz app</span>. I complement my AI expertise with full-stack development using <span class="highlight">Django, FastAPI, and React</span>, and have hands-on experience with Docker, Linux, and Arduino. My strong problem-solving and communication skills drive impactful solutions.
+            I'm an <span class="highlight">AI and Machine Learning Specialist</span> passionate about building
+            intelligent systems. My projects include a <span class="highlight">RAG-powered Joby app</span> for
+            ATS-friendly resumes, a <span class="highlight">sophisticated planning ecosystem (Atelier)</span>, a <span
+              class="highlight">machine translation system</span> from Konkani to Sanskrit, and a <span
+              class="highlight">RAG quiz app</span>. I complement my AI expertise with full-stack development using
+            <span class="highlight">Django, FastAPI, and React</span>, and have hands-on experience with Docker, Linux,
+            and Arduino. My strong problem-solving and communication skills drive impactful solutions.
           </p>
         </div>
       </div>
@@ -170,10 +275,15 @@
       <div class="container mx-auto px-4 text-center">
         <h2 class="text-4xl font-bold text-white mb-6" data-aos="fade-up">Let's Connect</h2>
         <p class="text-lg text-gray-400 mb-8">Interested in collaborating or discussing opportunities? Reach out!</p>
-        <form class="max-w-lg mx-auto" data-aos="fade-up" action="mailto:rod2sea11@gmail.com" method="post" enctype="text/plain">
-          <input type="text" placeholder="Your Name" class="w-full p-3 mb-4 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" />
-          <input type="email" placeholder="Your Email" class="w-full p-3 mb-4 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" />
-          <textarea placeholder="Your Message" class="w-full p-3 mb-4 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" rows="5"></textarea>
+        <form class="max-w-lg mx-auto" data-aos="fade-up" action="mailto:rod2sea11@gmail.com" method="post"
+          enctype="text/plain">
+          <input type="text" placeholder="Your Name"
+            class="w-full p-3 mb-4 glass-input text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" />
+          <input type="email" placeholder="Your Email"
+            class="w-full p-3 mb-4 glass-input text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" />
+          <textarea placeholder="Your Message"
+            class="w-full p-3 mb-4 glass-input text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
+            rows="5"></textarea>
           <button type="submit" class="btn-atc text-white px-6 py-3 rounded-full">Send Message</button>
         </form>
       </div>
@@ -187,7 +297,8 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./static/js/script.js">
-      
+
     </script>
   </body>
-</html>
+
+  </html>

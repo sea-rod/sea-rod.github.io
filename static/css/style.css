@@ -1,38 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
 :root {
-        --atc-color: rgb(5, 188, 255);
-        --atc-color-dark: rgb(16, 137, 182);
-        --neon: rgba(5, 188, 255, 0.224);
+        --atc-color: rgb(0, 255, 255);
+        --atc-color-dark: rgb(0, 150, 150);
+        --neon: rgba(0, 255, 255, 0.2);
+        --glass-bg: rgba(255, 255, 255, 0.03);
+        --glass-border: rgba(255, 255, 255, 0.1);
+        --iridescent-gradient: linear-gradient(45deg, #4B0082, #00FFFF, #C0C0C0);
       }
 
       /* Custom Tailwind Overrides and Animations */
       body {
-        background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+        background: #050505;
         font-family: 'Inter', sans-serif;
         height: 100%;
+        color: #e5e7eb;
       }
+
+      h1, h2, h3, .navbar-brand {
+        font-family: 'Orbitron', sans-serif;
+      }
+
       .neon-glow {
-        box-shadow: 0 0 10px rgba(5, 188, 255, 0.8), 0 0 20px rgba(5, 188, 255, 0.4);
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.6), 0 0 30px rgba(0, 255, 255, 0.3);
       }
       .nav-link:hover {
-        color: #05bcff;
+        color: #00FFFF;
         transition: color 0.3s ease;
       }
       .skill-card {
         border-radius: 20px;
-        background-color: #262626;
+        background: var(--glass-bg);
+        backdrop-filter: blur(12px);
         padding: 1.5rem;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         will-change: transform, opacity;
-        border: 1px solid rgba(5, 188, 255, 0.2);
+        border: 1px solid var(--glass-border);
       }
       .skill-card:hover {
-        box-shadow: var(--atc-color) 0px 0px 30px 5px;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
         transform: translateY(-10px) scale(1.02);
+        border-color: rgba(0, 255, 255, 0.5);
       }
       .tag {
-        background-color: #505050;
-        color: #87ceeb;
+        background: rgba(255, 255, 255, 0.05);
+        color: #00FFFF;
         padding: 4px 12px;
         border-radius: 12px;
         font-size: 0.875rem;
@@ -41,20 +54,16 @@
         font-weight: 500;
         white-space: nowrap;
         transition: transform 0.2s ease;
+        border: 1px solid rgba(0, 255, 255, 0.2);
       }
       .tag:hover {
         transform: scale(1.1);
+        background: rgba(0, 255, 255, 0.1);
       }
       .navbar-brand {
-        background-image: linear-gradient(
-          -225deg,
-          rgb(150, 150, 150) 0%,
-          rgb(150, 150, 150) 50%,
-          #ffffff 60%,
-          rgb(3, 3, 3) 100%
-        );
-        background-size: 210% auto;
-        color: #fff; 
+        background: var(--iridescent-gradient);
+        background-size: 200% auto;
+        color: #fff;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -76,6 +85,7 @@
         border: 1px solid var(--atc-color);
         color: var(--atc-color);
         transition: 0.9s;
+        background: transparent;
       }
       .btn-atc:hover {
         border: 2px solid;
@@ -88,7 +98,7 @@
         color: var(--atc-color);
       }
       .card-text {
-        color: #636363;
+        color: #a1a1aa;
         text-align: justify;
         font-size: 0.95rem;
       }
@@ -120,3 +130,72 @@
           margin-top: 1rem;
         }
       }
+      .glass-input {
+        background: rgba(255, 255, 255, 0.05) !important;
+        backdrop-filter: blur(8px);
+        border: 1px solid var(--glass-border) !important;
+        color: white !important;
+      }
+
+      /* AI Developer 3D Elements */
+      .profile-3d-container {
+        perspective: 1000px;
+        display: inline-block;
+      }
+
+      .profile-3d-card {
+        transition: transform 0.1s ease-out;
+        transform-style: preserve-3d;
+        position: relative;
+        z-index: 1;
+      }
+
+      .ai-ring {
+        position: absolute;
+        border: 2px solid var(--atc-color);
+        border-radius: 50%;
+        opacity: 0.3;
+        pointer-events: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+      }
+
+      .ai-ring-1 {
+        width: 110%;
+        height: 110%;
+        animation: orbit 8s linear infinite;
+        border-style: dashed;
+      }
+      .ai-ring-2 {
+        width: 125%;
+        height: 125%;
+        animation: orbit 12s linear infinite reverse;
+        opacity: 0.1;
+      }
+
+      @keyframes orbit {
+        from { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(0deg); }
+        to { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(360deg); }
+      }
+
+      .neon-pulse-ring {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        border: 2px solid var(--atc-color);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      @keyframes pulse-ring {
+        0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.8; }
+        100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0; }
+      }
+
